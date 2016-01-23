@@ -18,6 +18,7 @@
   "homepage": "https://github.com/zlatkoyankov/estest#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
     "gulp-jasmine": "^2.2.1"
   }
 }
