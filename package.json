@@ -1,0 +1,24 @@
+{
+  "name": "es6git",
+  "version": "0.0.1",
+  "description": "test for es6 and some other frameworks",
+  "main": "index.ntml",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlatkoyankov/estest.git"
+  },
+  "author": "zlatkoyankov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zlatkoyankov/estest/issues"
+  },
+  "homepage": "https://github.com/zlatkoyankov/estest#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.1",
+    "gulp-jasmine": "^2.2.1"
+  }
+}
