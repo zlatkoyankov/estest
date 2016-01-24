@@ -16,7 +16,7 @@ gulp.task('sass',function() {
 });
 
 
-gulp.task('hello', function() {
+gulp.task('default', function() {
 	console.log('hello from gulp')
 });
 
