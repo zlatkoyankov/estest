@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
+var del = require('del');
 
 gulp.task('lint', function() {
 	return gulp.src('js/*.js')
@@ -15,6 +16,9 @@ gulp.task('sass',function() {
 	.pipe(gulp.dest('css'));
 });
 
+gulp.task('clean', function() {
+    return del(['build']);
+});
 
 gulp.task('default', function() {
 	console.log('hello from gulp')
