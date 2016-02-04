@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
 var del = require('del');
+var babel = require('gulp-babel');
 
 var paths = {
     scripts: ['src/js/**/*.js'],
@@ -16,6 +17,13 @@ gulp.task('lint', function() {
 		.pipe(jshing.reported('default'));
 });
 
+gulp.task('babel', function() {
+    gulp.src(paths.scripts)
+    .pipe(babel({
+        presets: ['es2015']
+    }))
+    .pipe(gulp.dest('build/js'));
+});
 
 gulp.task('sass',function() {
 	gulp.src('src/sass/*.scss')
