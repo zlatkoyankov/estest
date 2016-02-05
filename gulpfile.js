@@ -5,11 +5,20 @@ var sass = require('gulp-sass');
 var jshint = require('gulp-jshint');
 var del = require('del');
 var babel = require('gulp-babel');
+var through = require('through2');
+
 
 var paths = {
     scripts: ['src/js/**/*.js'],
     images: 'src/img/**/*'
 };
+
+function logFileHelpers() {
+    return through.obj((file, enc, cb) => {
+        console.log(file.babel.usedHelpers);
+        cb(null, file);
+    });
+}
 
 gulp.task('lint', function() {
 	return gulp.src('js/*.js')
@@ -22,7 +31,8 @@ gulp.task('babel', function() {
     .pipe(babel({
         presets: ['es2015']
     }))
-    .pipe(gulp.dest('build/js'));
+    .pipe(logFileHelpers());
+    //.pipe(gulp.dest('build/js'));
 });
 
 gulp.task('sass',function() {
